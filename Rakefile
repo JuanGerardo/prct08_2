@@ -5,10 +5,6 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :default => :spec
 
-desc "Expectativas de la clase Matriz"
-task :spec do
-        sh "rspec -I. spec/matrices_spec.rb"
-end
 
 desc "Ejecutar con documentacion"
 task :doc do
@@ -18,4 +14,9 @@ end
 desc "Ejecutar documentacion html"
 task :thtml do
   sh "rspec -I. spec/matrices_spec.rb --format html"
+end
+
+desc "Ejecutar el programa principal"
+task :bin do
+        sh "ruby -Ilib/ lib/matrices.rb"
 end
